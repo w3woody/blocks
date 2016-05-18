@@ -29,3 +29,7 @@ Move boxes around until they're where they belong.
     Raleigh, NC 27614
     United States of America
     woody@alumni.caltech.edu
+
+# Why?
+
+Because sometimes I miss the old days when I did embedded software development. :-)
