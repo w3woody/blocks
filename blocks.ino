@@ -793,7 +793,7 @@ void loop()
             break;
             
         case STATE_STARTPLAY:
-            GLevel = 7;
+            GLevel = 0;
             // Falls through to
         case STATE_STARTLEVEL:
             StartLevel();
