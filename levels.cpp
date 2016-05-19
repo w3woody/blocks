@@ -98,7 +98,7 @@ const static PROGMEM uint16_t LevelMap[] =
     0xFC01,
     0xFFFF,
 
-    // Level 7
+    // Level 8
     0xFFFF,         // 1111111111111111
     0xFFFF,         // 1111111111111111
     0xFE3F,         // 1111111000111111
@@ -108,7 +108,7 @@ const static PROGMEM uint16_t LevelMap[] =
     0xFFFF,         // 1111111111111111
     0xFFFF,         // 1111111111111111
 
-    // Level 8
+    // Level 9
     0xFFFF,
     0xF0FF,
     0xF08F,
@@ -116,6 +116,36 @@ const static PROGMEM uint16_t LevelMap[] =
     0xFFCF,
     0xFFCF,
     0xFFCF,
+    0xFFFF,
+
+    // Level 10
+    0xFFFF,
+    0x83F1,
+    0x93F1,
+    0x93FB,
+    0x8001,
+    0x9211,
+    0x921F,
+    0xFFFF,
+
+    // Level 11
+    0xFFFF,
+    0xFFFF,
+    0x891F,
+    0x801F,
+    0xC9E3,
+    0xC803,
+    0xFFE3,
+    0xFFFF,
+
+    // Level 12
+    0xFFFF,
+    0xFC11,
+    0xF851,
+    0xF011,
+    0xE15B,
+    0xC303,
+    0xC7F3,
     0xFFFF,
 };
 
@@ -126,31 +156,42 @@ const static PROGMEM uint16_t LevelMap[] =
  */
 const static PROGMEM uint8_t BoxMap[] =
 {
-    1,
+    1,      // 1
     0x84,
-    1,
+    1,      // 1
     0x54,
-    2,
+    2,      // 1
     0x53,
     0x54,
-    2,
+    2,      // 1
     0x73,
     0x72,
-    4,
+    4,      // 1
     0x22,
     0x24,
     0x32,
     0x34,
-    2,
+    2,      // 1
     0x53,
     0x74,
-    2,
+    2,      // 1
     0x64,
     0x83,
-    3,
+    3,      // 1
     0x52,
     0x62,
     0x53,
+    2,      // 1
+    0x54,
+    0x53,
+    3, // level 10
+    0x34,
+    0x23,
+    0x73,
+    3,  // level 11
+    0x54,
+    0x82,
+    0x72,
 };
 
 
@@ -186,6 +227,17 @@ const static PROGMEM uint8_t EndMap[] =
     0xA2,
     0xB2,
     0xB3,
+    2,
+    0xE1,
+    0xD3,
+    3, // level 10
+    0xD4,
+    0xC4,
+    0xB4,
+    3,  // level 11
+    0xE1,
+    0xE2,
+    0xE3,
 };
 
 /*  StartPos
@@ -203,6 +255,9 @@ const static PROGMEM uint8_t StartPos[] = {
     0x73,
     0x53,
     0xA6,
+    0xC1,
+    0x53,
+    0x52,
 };
 
 /****************************************************************************/

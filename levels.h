@@ -32,7 +32,7 @@
 /*                                                                          */
 /****************************************************************************/
 
-#define MAXLEVELS           8       // TODO: Add more levels
+#define MAXLEVELS           11       // TODO: Add more levels
 
 #define MAXBOXES            16      // Max boxes possible
 
