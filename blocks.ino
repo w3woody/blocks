@@ -431,6 +431,9 @@ static void LoadLevel()
 static void StartLevel()
 {
     char text[12];
+
+    // Save level for power cycle
+    EEPROM.write(EEPROM_STORAGE_SPACE_START,GLevel+1);
     
     // Load the level, draw the play.
     LoadLevel();
@@ -481,7 +484,9 @@ static void EndLevel()
        GState = STATE_STARTLEVEL;
         
     } else {
-        // Spin because we're done. TODO: Scores
+        // Spin because we're done.
+        EEPROM.write(EEPROM_STORAGE_SPACE_START,0); // clear stored level
+
         for (;;) {
             arduboy.clear();
             arduboy.setCursor(4,32);
@@ -587,6 +592,7 @@ static void DoEndGame()
 
     if (yn) {
         // We hit yes. Reset the state to reload the level
+        EEPROM.write(EEPROM_STORAGE_SPACE_START,0); // clear stored level
         GState = STATE_START;
     }
 }
@@ -771,8 +777,16 @@ static void DoPlayLogic()
  */
 void setup() 
 {
-    GState = STATE_START;       // Start state
+    // See if the user is powering up with a saved level
+    uint8_t savedLevel = EEPROM.read(EEPROM_STORAGE_SPACE_START);
+    if ((savedLevel == 0) || (savedLevel > MAXLEVELS)) {
+        GState = STATE_START;       // Start state
+    } else {
+        GLevel = savedLevel-1;
+        GState = STATE_STARTLEVEL;
+    }
 
+    // Now start up with a cleared screen
     arduboy.beginNoLogo();
     arduboy.setFrameRate(60);
     arduboy.clear();

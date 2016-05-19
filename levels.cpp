@@ -33,11 +33,10 @@
 
 /*  LevelMap
  *
- *      Each level is a 16 byte bitmap shwoing which areas have walls. A 1 bit
- *  is a wall.
+ *      Each level is a 16 byte bitmap with a bit set for each wall item
  */
-const static PROGMEM uint16_t LevelMap[] = 
-{
+
+const static PROGMEM uint16_t LevelMap[] = {
     // Level 1
     0xFFFF,
     0x8001,
@@ -47,7 +46,17 @@ const static PROGMEM uint16_t LevelMap[] =
     0x8001,
     0x8001,
     0xFFFF,
-    
+
+    // Level 20
+    0xFFFF,
+    0xFFFF,
+    0xF9E7,
+    0xC003,
+    0xF9E7,
+    0xFFFF,
+    0xFFFF,
+    0xFFFF,
+
     // Level 2
     0xFFFF,
     0x8001,
@@ -57,7 +66,7 @@ const static PROGMEM uint16_t LevelMap[] =
     0x8001,
     0x8001,
     0xFFFF,
-    
+
     // Level 3
     0xFFFF,
     0x8001,
@@ -67,7 +76,37 @@ const static PROGMEM uint16_t LevelMap[] =
     0x8001,
     0x8001,
     0xFFFF,
-    
+
+    // Level 17
+    0xFFFF,
+    0x8201,
+    0x8201,
+    0x8201,
+    0x8341,
+    0x8041,
+    0x8041,
+    0xFFFF,
+
+    // Level 12
+    0xFFFF,
+    0xFCFF,
+    0xFCFF,
+    0xE0FF,
+    0xFEFF,
+    0xFEFF,
+    0xFEFF,
+    0xFFFF,
+
+    // Level 13
+    0xFFFF,
+    0xFFFF,
+    0xFCFF,
+    0xE0FF,
+    0xFE7F,
+    0xFC01,
+    0xFC7F,
+    0xFFFF,
+
     // Level 4
     0xFFFF,
     0xF47F,
@@ -76,16 +115,6 @@ const static PROGMEM uint16_t LevelMap[] =
     0xF001,
     0xF401,
     0xF601,
-    0xFFFF,
-
-    // Level 5
-    0xFFFF,
-    0x8F09,
-    0x8909,
-    0x8109,
-    0x8909,
-    0x8801,
-    0x8F01,
     0xFFFF,
 
     // Level 6
@@ -98,17 +127,47 @@ const static PROGMEM uint16_t LevelMap[] =
     0xFC01,
     0xFFFF,
 
-    // Level 8
-    0xFFFF,         // 1111111111111111
-    0xFFFF,         // 1111111111111111
-    0xFE3F,         // 1111111000111111
-    0xF83F,         // 1111100000111111
-    0xF93F,         // 1111100100111111
-    0xF9FF,         // 1111100111111111
-    0xFFFF,         // 1111111111111111
-    0xFFFF,         // 1111111111111111
+    // Level 14
+    0xFFFF,
+    0xF9FF,
+    0xF91F,
+    0xF01F,
+    0xF91F,
+    0xF9FF,
+    0xF9FF,
+    0xFFFF,
 
-    // Level 9
+    // Level 5
+    0xFFFF,
+    0x8F09,
+    0x8909,
+    0x8109,
+    0x8909,
+    0x8801,
+    0x8F01,
+    0xFFFF,
+
+    // Level 7
+    0xFFFF,
+    0xFFFF,
+    0xFE3F,
+    0xF83F,
+    0xF93F,
+    0xF9FF,
+    0xFFFF,
+    0xFFFF,
+
+    // Level 18
+    0xFFFF,
+    0x9819,
+    0x9819,
+    0x8181,
+    0x8181,
+    0x9819,
+    0x9819,
+    0xFFFF,
+
+    // Level 8
     0xFFFF,
     0xF0FF,
     0xF08F,
@@ -118,7 +177,7 @@ const static PROGMEM uint16_t LevelMap[] =
     0xFFCF,
     0xFFFF,
 
-    // Level 10
+    // Level 9
     0xFFFF,
     0x83F1,
     0x93F1,
@@ -128,7 +187,27 @@ const static PROGMEM uint16_t LevelMap[] =
     0x921F,
     0xFFFF,
 
-    // Level 11
+    // Level 16
+    0xFFFF,
+    0x8C63,
+    0x8C23,
+    0x81A3,
+    0xB1B7,
+    0xB007,
+    0x8667,
+    0xFFFF,
+
+    // Level 15
+    0xFFFF,
+    0xE007,
+    0xF557,
+    0xE007,
+    0xF557,
+    0xE007,
+    0xE007,
+    0xFFFF,
+
+    // Level 10
     0xFFFF,
     0xFFFF,
     0x891F,
@@ -138,7 +217,7 @@ const static PROGMEM uint16_t LevelMap[] =
     0xFFE3,
     0xFFFF,
 
-    // Level 12
+    // Level 11
     0xFFFF,
     0xFC11,
     0xF851,
@@ -147,118 +226,211 @@ const static PROGMEM uint16_t LevelMap[] =
     0xC303,
     0xC7F3,
     0xFFFF,
+
+    // Level 19
+    0xFFFF,
+    0xC001,
+    0xE0F1,
+    0xB199,
+    0x9B0D,
+    0x8001,
+    0x9B19,
+    0xFFFF,
 };
 
 /*  BoxMap
  *
- *      Each level box map is a header (with the number of boxes), followed
- *  by a byte per box, with the format XXXXYYYY.
+ *      Each level box map is an 8 byte header with the number of boxes,
+ *  followed by a byte per box, with the format XXXXYYYY.
  */
-const static PROGMEM uint8_t BoxMap[] =
-{
-    1,      // 1
+
+const static PROGMEM uint8_t BoxMap[] = {
+    // Level 1
+    1,
     0x84,
-    1,      // 1
-    0x54,
-    2,      // 1
-    0x53,
-    0x54,
-    2,      // 1
-    0x73,
-    0x72,
-    4,      // 1
-    0x22,
-    0x24,
-    0x32,
-    0x34,
-    2,      // 1
-    0x53,
-    0x74,
-    2,      // 1
-    0x64,
+    // Level 20
+    1,
     0x83,
-    3,      // 1
-    0x52,
-    0x62,
-    0x53,
-    2,      // 1
+    // Level 2
+    1,
+    0x54,
+    // Level 3
+    2,
     0x54,
     0x53,
-    3, // level 10
+    // Level 17
+    2,
+    0x43,
+    0x44,
+    // Level 12
+    1,
+    0x63,
+    // Level 13
+    1,
+    0x73,
+    // Level 4
+    2,
+    0x72,
+    0x73,
+    // Level 6
+    2,
+    0x74,
+    0x53,
+    // Level 14
+    2,
+    0x62,
+    0x64,
+    // Level 5
+    4,
+    0x32,
+    0x22,
+    0x34,
+    0x24,
+    // Level 7
+    2,
+    0x83,
+    0x64,
+    // Level 18
+    2,
+    0x33,
+    0x34,
+    // Level 8
+    3,
+    0x62,
+    0x52,
+    0x53,
+    // Level 9
+    2,
+    0x54,
+    0x53,
+    // Level 16
+    3,
+    0x65,
+    0x22,
+    0x94,
+    // Level 15
+    4,
+    0x44,
+    0x62,
+    0x64,
+    0x42,
+    // Level 10
+    3,
     0x34,
     0x23,
     0x73,
-    3,  // level 11
+    // Level 11
+    3,
     0x54,
     0x82,
     0x72,
+    // Level 19
+    2,
+    0x95,
+    0x52,
 };
-
 
 /*  EndMap
  *
- *      Same format as the BoxMap; this gives the position where the boxes
- *  should go after being moved..
+ *      Same format as BitMap; this gives the position where the 
+ *  boxes should go.
  */
-const static PROGMEM uint8_t EndMap[] =
-{
+
+const static PROGMEM uint8_t EndMap[] = {
     1,
     0xA4,
     1,
-    0xA4,   
+    0xB3,
+    1,
+    0xA4,
     2,
-    0xA3,   
-    0xA4,   
+    0xA3,
+    0xA4,
     2,
+    0xB3,
     0xB4,
-    0xD4,
-    4,
-    0xD1,
-    0xD2,
-    0xE1,
-    0xE2,
+    1,
+    0x76,
+    1,
+    0xD5,
     2,
-    0xD6,
+    0xD4,
+    0xB4,
+    2,
     0xE6,
+    0xD6,
+    2,
+    0xA2,
+    0xA4,
+    4,
+    0xE1,
+    0xD1,
+    0xE2,
+    0xD2,
     2,
     0x82,
     0x93,
+    2,
+    0xE1,
+    0xD1,
     3,
-    0xA2,
     0xB2,
+    0xA2,
     0xB3,
     2,
     0xE1,
     0xD3,
-    3, // level 10
+    3,
+    0xD1,
+    0xD2,
+    0xD3,
+    4,
+    0xC2,
+    0xC4,
+    0xA2,
+    0xA4,
+    3,
     0xD4,
     0xC4,
     0xB4,
-    3,  // level 11
+    3,
     0xE1,
     0xE2,
     0xE3,
+    2,
+    0xE1,
+    0xE2,
 };
 
 /*  StartPos
- * 
- *      One byte per level, in the same XXXXYYYY format as used with boxes;
+ *
+ *      One byte per level in the same XXXXYYYY format as used with boxes.
  *  this gives the initial position of the player
  */
 
 const static PROGMEM uint8_t StartPos[] = {
     0x44,
+    0x53,
     0x44,
     0x44,
+    0x33,
+    0x33,
+    0x33,
+    0x43,
+    0x73,
     0x43,
     0x23,
-    0x73,
     0x53,
+    0x13,
     0xA6,
     0xC1,
+    0x61,
+    0x33,
     0x53,
     0x52,
+    0x25,
 };
+
 
 /****************************************************************************/
 /*                                                                          */
