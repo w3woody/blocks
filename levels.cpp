@@ -336,6 +336,16 @@ const static PROGMEM uint16_t LevelMap[] = {
     0x8C1D,
     0xFFFD,
     0xFFFF,
+
+    // Level 31
+    0xFFFF,
+    0x8101,
+    0x8D01,
+    0x813B,
+    0x89B1,
+    0xF831,
+    0xFF31,
+    0xFFFF,
 };
 
 /*  BoxMap
@@ -477,6 +487,11 @@ const static PROGMEM uint8_t BoxMap[] = {
     2,
     0x33,
     0x34,
+    // Level 31
+    3,
+    0x32,
+    0x23,
+    0x53,
 };
 
 /*  EndMap
@@ -588,6 +603,10 @@ const static PROGMEM uint8_t EndMap[] = {
     2,
     0xC3,
     0xC4,
+    3,
+    0xE6,
+    0xD6,
+    0xC6,
 };
 
 /*  StartPos
@@ -627,10 +646,8 @@ const static PROGMEM uint8_t StartPos[] = {
     0x63,
     0x83,
     0xE6,
+    0x43,
 };
-
-
-
 
 /****************************************************************************/
 /*                                                                          */

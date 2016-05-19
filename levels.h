@@ -32,7 +32,7 @@
 /*                                                                          */
 /****************************************************************************/
 
-#define MAXLEVELS           30
+#define MAXLEVELS           31
 
 #define MAXBOXES            16      // Max boxes possible
 
