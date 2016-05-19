@@ -38,14 +38,34 @@
 
 const static PROGMEM uint16_t LevelMap[] = {
     // Level 1
-    0xFFFF,
-    0x8001,
-    0x8001,
-    0x8001,
-    0x8001,
-    0x8001,
-    0x8001,
-    0xFFFF,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+
+    // Level 26
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+    0x0000,
+
+    // Level 2
+    0x0000,
+    0x0000,
+    0x0100,
+    0x0100,
+    0x0100,
+    0x0100,
+    0x0000,
+    0x0000,
 
     // Level 20
     0xFFFF,
@@ -55,16 +75,6 @@ const static PROGMEM uint16_t LevelMap[] = {
     0xF9E7,
     0xFFFF,
     0xFFFF,
-    0xFFFF,
-
-    // Level 2
-    0xFFFF,
-    0x8001,
-    0x8001,
-    0x8101,
-    0x8101,
-    0x8001,
-    0x8001,
     0xFFFF,
 
     // Level 3
@@ -115,6 +125,16 @@ const static PROGMEM uint16_t LevelMap[] = {
     0xF001,
     0xF401,
     0xF601,
+    0xFFFF,
+
+    // Level 29
+    0xFFFF,
+    0xED87,
+    0xEDB7,
+    0x8001,
+    0xEDB7,
+    0xEDB7,
+    0x8001,
     0xFFFF,
 
     // Level 6
@@ -236,6 +256,86 @@ const static PROGMEM uint16_t LevelMap[] = {
     0x8001,
     0x9B19,
     0xFFFF,
+
+    // Level 21
+    0xFFFF,
+    0xFF91,
+    0xF181,
+    0xF011,
+    0xF99F,
+    0x81FF,
+    0x99FF,
+    0xFFFF,
+
+    // Level 22
+    0x8001,
+    0x99C1,
+    0x9501,
+    0x9589,
+    0x9509,
+    0x99C9,
+    0x8001,
+    0x8001,
+
+    // Level 23
+    0x0000,
+    0x770E,
+    0x4448,
+    0x664C,
+    0x4448,
+    0x4748,
+    0x0000,
+    0x0000,
+
+    // Level 24
+    0xFFFF,
+    0x8841,
+    0x8841,
+    0x8841,
+    0x8841,
+    0x8001,
+    0x8001,
+    0xFFFF,
+
+    // Level 25
+    0xFFFF,
+    0xE3F1,
+    0xE3F1,
+    0x80F1,
+    0x80FB,
+    0xEC01,
+    0xE601,
+    0xFFFF,
+
+    // Level 27
+    0xFFFF,
+    0xF9F1,
+    0x8801,
+    0x81F9,
+    0xF9FF,
+    0xF9FF,
+    0xFFFF,
+    0xFFFF,
+
+    // Level 28
+    0xFFFF,
+    0x9249,
+    0x9249,
+    0x9241,
+    0x9209,
+    0x904D,
+    0x8061,
+    0xFFFF,
+
+    // Level 30
+    0xFFFF,
+    0xFC01,
+    0xCD85,
+    0x8C15,
+    0x80D5,
+    0x8C1D,
+    0xFFFD,
+    0xFFFF,
 };
 
 /*  BoxMap
@@ -248,12 +348,16 @@ const static PROGMEM uint8_t BoxMap[] = {
     // Level 1
     1,
     0x84,
-    // Level 20
-    1,
-    0x83,
+    // Level 26
+    2,
+    0x65,
+    0x64,
     // Level 2
     1,
     0x54,
+    // Level 20
+    1,
+    0x83,
     // Level 3
     2,
     0x54,
@@ -272,6 +376,12 @@ const static PROGMEM uint8_t BoxMap[] = {
     2,
     0x72,
     0x73,
+    // Level 29
+    4,
+    0x62,
+    0x73,
+    0x53,
+    0x64,
     // Level 6
     2,
     0x74,
@@ -328,6 +438,45 @@ const static PROGMEM uint8_t BoxMap[] = {
     2,
     0x95,
     0x52,
+    // Level 21
+    2,
+    0x25,
+    0x53,
+    // Level 22
+    2,
+    0x36,
+    0x64,
+    // Level 23
+    1,
+    0x35,
+    // Level 24
+    5,
+    0x82,
+    0x62,
+    0x73,
+    0x84,
+    0x64,
+    // Level 25
+    4,
+    0x32,
+    0x44,
+    0x52,
+    0x64,
+    // Level 27
+    3,
+    0x62,
+    0x53,
+    0x64,
+    // Level 28
+    4,
+    0xB2,
+    0xB3,
+    0xB4,
+    0x53,
+    // Level 30
+    2,
+    0x33,
+    0x34,
 };
 
 /*  EndMap
@@ -339,10 +488,13 @@ const static PROGMEM uint8_t BoxMap[] = {
 const static PROGMEM uint8_t EndMap[] = {
     1,
     0xA4,
-    1,
-    0xB3,
+    2,
+    0xA4,
+    0xA5,
     1,
     0xA4,
+    1,
+    0xB3,
     2,
     0xA3,
     0xA4,
@@ -356,6 +508,11 @@ const static PROGMEM uint8_t EndMap[] = {
     2,
     0xD4,
     0xB4,
+    4,
+    0x43,
+    0x65,
+    0xE6,
+    0x61,
     2,
     0xE6,
     0xD6,
@@ -400,6 +557,37 @@ const static PROGMEM uint8_t EndMap[] = {
     2,
     0xE1,
     0xE2,
+    2,
+    0xD2,
+    0xC3,
+    2,
+    0xC1,
+    0xC2,
+    1,
+    0x91,
+    5,
+    0xC2,
+    0xA2,
+    0xB3,
+    0xC4,
+    0xA4,
+    4,
+    0xE1,
+    0xE2,
+    0xD1,
+    0xD2,
+    3,
+    0xD1,
+    0xE2,
+    0xC2,
+    4,
+    0xE1,
+    0xE2,
+    0xD1,
+    0xD2,
+    2,
+    0xC3,
+    0xC4,
 };
 
 /*  StartPos
@@ -410,13 +598,15 @@ const static PROGMEM uint8_t EndMap[] = {
 
 const static PROGMEM uint8_t StartPos[] = {
     0x44,
-    0x53,
+    0x43,
     0x44,
+    0x53,
     0x44,
     0x33,
     0x33,
     0x33,
     0x43,
+    0x63,
     0x73,
     0x43,
     0x23,
@@ -429,7 +619,17 @@ const static PROGMEM uint8_t StartPos[] = {
     0x53,
     0x52,
     0x25,
+    0x26,
+    0x51,
+    0x25,
+    0x33,
+    0xD4,
+    0x63,
+    0x83,
+    0xE6,
 };
+
+
 
 
 /****************************************************************************/
