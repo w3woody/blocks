@@ -4,6 +4,12 @@ A smple [Arduboy](https://www.arduboy.com) game.
 # Description
 Move boxes around until they're where they belong.
 
+## Some notes about Blocks
+
+- The current level you are on is saved if you power-cycle the game. (The level is stored in EEPROM.)
+- You can always reset the level you're on, and you can also exit the game.
+- Now with 30 levels of varying difficulty.
+
 # License
     Blocks: A simple Arduboy game.
     
