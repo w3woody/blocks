@@ -6,9 +6,23 @@ Move boxes around until they're where they belong.
 
 ## Some notes about Blocks
 
-- The current level you are on is saved if you power-cycle the game. (The level is stored in EEPROM.)
+- The current level you are on is saved if you power-cycle the game. (The 
+level is stored in EEPROM.)
 - You can always reset the level you're on, and you can also exit the game.
-- Now with 30 levels of varying difficulty.
+- Now with 31 levels of varying difficulty.
+
+## Game level editor
+
+The game level editor is now included in the "levels" directory. You don't 
+need this if you wish to run the Arduboy game, but it helps if you wish to
+build new levels. The source was built with Eclipse, and I've included the
+Eclipse project files.
+
+The game editor contains a panel which shows the code that needs to be cut
+and pasted into the source code. You can also validate each level using the
+"Test" button, which will recursively exhaust all possible moves until it
+determines if the level can be played to conclusion correctly or not. (Note
+that if you have more than 2 boxes, the search can take a long time.)
 
 # License
     Blocks: A simple Arduboy game.
