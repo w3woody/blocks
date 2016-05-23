@@ -9,7 +9,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.HashSet;
 import java.util.concurrent.Future;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;

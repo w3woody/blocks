@@ -122,7 +122,7 @@ public class MainWindow extends JFrame
 		getContentPane().add("controls",buttons);
 		
 		levels = new LevelListModel();
-		JList<Level> list = new JList<Level>(levels);
+		final JList<Level> list = new JList<Level>(levels);
 		JScrollPane lsp = new JScrollPane(list);
 		getContentPane().add("list", lsp);
 		
